@@ -8,7 +8,7 @@
 ## Revision History ##
 ######################
 # v0.01 3/5/2018 Brian Rudy (brudyNO@SPAMpraecogito.com)
-#       First working version. Supports up to 32 down and 8 up channels
+#       First working version. Supports firmware version D31CM-PEREGRINE-1.0.1.0-GA-04-NOSH
 #
 
 
