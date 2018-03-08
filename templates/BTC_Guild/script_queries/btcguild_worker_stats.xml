@@ -1,0 +1,114 @@
+<interface>
+	<name>Get BTC Guild Worker Stats</name>
+	<description>Queries the list of workers for a given API key for stats</description>
+	<script_path>perl |path_cacti|/scripts/query_btcguild_stats.pl</script_path>
+        <arg_prepend>|host_hostname| 88e3d12adc5e99003a23d99a108eb4ce workers</arg_prepend>
+	<arg_index>index</arg_index>
+	<arg_query>query</arg_query>
+	<arg_get>get</arg_get>
+	<arg_num_indexes>num_indexes</arg_num_indexes>
+	<output_delimeter>:</output_delimeter>
+	<index_order>workerName</index_order>
+	<index_order_type>alphabetic</index_order_type>
+	<index_title_format>|chosen_order_field|</index_title_format>
+
+	<fields>
+		<workerName>
+			<name>Worker Name</name>
+			<direction>input</direction>
+			<query_name>worker_name</query_name>
+		</workerName>
+
+		<hashRate>
+			<name>Hash Rate</name>
+			<direction>output</direction>
+			<query_name>hash_rate</query_name>
+		</hashRate>
+		<validShares>
+			<name>Valid Shares</name>
+			<direction>output</direction>
+			<query_name>valid_shares</query_name>
+		</validShares>
+		<StaleShares>
+			<name>Stale Shares</name>
+			<direction>output</direction>
+			<query_name>stale_shares</query_name>
+		</StaleShares>
+		<dupeShares>
+			<name>Duplicate Shares</name>
+			<direction>output</direction>
+			<query_name>dupe_shares</query_name>
+		</dupeShares>
+		<unknownShares>
+			<name>Unknown Shares</name>
+			<direction>output</direction>
+			<query_name>unknown_shares</query_name>
+		</unknownShares>
+		<validSharesSinceReset>
+			<name>Valid Shares Since Reset</name>
+			<direction>output</direction>
+			<query_name>valid_shares_since_reset</query_name>
+		</validSharesSinceReset>
+		<staleSharesSinceReset>
+			<name>Stale Shares Since Reset</name>
+			<direction>output</direction>
+			<query_name>stale_shares_since_reset</query_name>
+		</staleSharesSinceReset>
+		<dupeSharesSinceReset>
+			<name>Duplicate Shares Since Reset</name>
+			<direction>output</direction>
+			<query_name>dupe_shares_since_reset</query_name>
+		</dupeSharesSinceReset>
+		<unknownSharesSinceReset>
+			<name>Unknown Shares Since Reset</name>
+			<direction>output</direction>
+			<query_name>unknown_shares_since_reset</query_name>
+		</unknownSharesSinceReset>
+
+		<validSharesNmc>
+			<name>Valid Shares NMC</name>
+			<direction>output</direction>
+			<query_name>valid_shares_nmc</query_name>
+		</validSharesNmc>
+		<StaleSharesNmc>
+			<name>Stale Shares NMC</name>
+			<direction>output</direction>
+			<query_name>stale_shares_nmc</query_name>
+		</StaleSharesNmc>
+		<dupeSharesNmc>
+			<name>Duplicate Shares NMC</name>
+			<direction>output</direction>
+			<query_name>dupe_shares_nmc</query_name>
+		</dupeSharesNmc>
+		<unknownSharesNmc>
+			<name>Unknown Shares</name>
+			<direction>output</direction>
+			<query_name>unknown_shares_nmc</query_name>
+		</unknownSharesNmc>
+		<validSharesNmcSinceReset>
+			<name>Valid Shares NMC Since Reset</name>
+			<direction>output</direction>
+			<query_name>valid_shares_nmc_since_reset</query_name>
+		</validSharesNmcSinceReset>
+		<staleSharesNmcSinceReset>
+			<name>Stale Shares NMC Since Reset</name>
+			<direction>output</direction>
+			<query_name>stale_shares_nmc_since_reset</query_name>
+		</staleSharesNmcSinceReset>
+		<dupeSharesNmcSinceReset>
+			<name>Duplicate Shares NMC Since Reset</name>
+			<direction>output</direction>
+			<query_name>dupe_shares_nmc_since_reset</query_name>
+		</dupeSharesNmcSinceReset>
+		<unknownSharesNmcSinceReset>
+			<name>Unknown Shares NMC Since Reset</name>
+			<direction>output</direction>
+			<query_name>unknown_shares_nmc_since_reset</query_name>
+		</unknownSharesNmcSinceReset>
+		<lastShare>
+			<name>Last Share</name>
+			<direction>output</direction>
+			<query_name>last_share</query_name>
+		</lastShare>
+	</fields>
+</interface>
