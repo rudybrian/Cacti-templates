@@ -1,14 +1,14 @@
 <interface>
-	<name>Get Arris SB8200 Up Stats</name>
-	<description>Queries the upstream stats</description>
+	<name>Get Arris SB8200 Down Stats</name>
+	<description>Queries the downstream stats</description>
 	<script_path>perl |path_cacti|/scripts/query_sb8200_stats.pl</script_path>
-        <arg_prepend>|host_hostname| Up</arg_prepend>
+        <arg_prepend>|host_hostname| Down</arg_prepend>
 	<arg_index>index</arg_index>
 	<arg_query>query</arg_query>
 	<arg_get>get</arg_get>
 	<arg_num_indexes>num_indexes</arg_num_indexes>
 	<output_delimeter>:</output_delimeter>
-	<index_order>index</index_order>
+	<index_order>Chan</index_order>
 	<index_order_type>alphabetic</index_order_type>
 	<index_title_format>|chosen_order_field|</index_title_format>
 
@@ -18,36 +18,41 @@
 			<direction>input</direction>
 			<query_name>Chan</query_name>
 		</Chan>
-
-		<ChanId>
-			<name>Channel ID</name>
-			<direction>output</direction>
-			<query_name>ChanId</query_name>
-		</ChanId>
 		<Stat>
 			<name>Status</name>
-			<direction>output</direction>
+			<direction>input</direction>
 			<query_name>Stat</query_name>
 		</Stat>
 		<Type>
 			<name>Type</name>
-			<direction>output</direction>
+			<direction>input</direction>
 			<query_name>Type</query_name>
 		</Type>
+
 		<Freq>
 			<name>Frequency</name>
 			<direction>output</direction>
 			<query_name>Freq</query_name>
 		</Freq>
-		<Width>
-			<name>Width</name>
-			<direction>output</direction>
-			<query_name>Width</query_name>
-		</Width>
 		<Power>
 			<name>Power</name>
 			<direction>output</direction>
 			<query_name>Power</query_name>
 		</Power>
+		<SNR>
+			<name>SNR</name>
+			<direction>output</direction>
+			<query_name>SNR</query_name>
+		</SNR>
+		<CorrCw>
+			<name>Correctable codewords</name>
+			<direction>output</direction>
+			<query_name>CorrCw</query_name>
+		</CorrCw>
+		<UncorrCw>
+			<name>Uncorrectable codewords</name>
+			<direction>output</direction>
+			<query_name>UncorrCw</query_name>
+		</UncorrCw>
 	</fields>
 </interface>
