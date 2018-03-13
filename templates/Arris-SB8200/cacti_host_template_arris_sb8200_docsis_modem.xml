@@ -1233,19 +1233,6 @@
 				<hard_return>on</hard_return>
 				<sequence>5</sequence>
 			</hash_1000197dcdc064a666084d28b5768412adc74e>
-			<hash_10001904bd78f922dabf4627004ee442c2e7c1>
-				<task_item_id>hash_0800195c508487120aab1ed9ffbda4dc0d7cb2</task_item_id>
-				<color_id>0</color_id>
-				<alpha>FF</alpha>
-				<graph_type_id>9</graph_type_id>
-				<consolidation_function_id>4</consolidation_function_id>
-				<cdef_id>0</cdef_id>
-				<value></value>
-				<gprint_id>hash_06001919414480d6897c8731c7dc6c5310653e</gprint_id>
-				<text_format>Channel:</text_format>
-				<hard_return></hard_return>
-				<sequence>6</sequence>
-			</hash_10001904bd78f922dabf4627004ee442c2e7c1>
 		</items>
 		<inputs>
 			<hash_090019a0c97b82d0aec8bedb35b53d51b24b9e>
@@ -1254,12 +1241,6 @@
 				<column_name>task_item_id</column_name>
 				<items>hash_000019f8ded0b2e779530e379b21bf13eac9d5|hash_0000191125902e4bc877c5b5493b0f90bac2ee|hash_0000194fef4590465767f04912ac621c1e3063|hash_0000191ffaff4ec8cc50fa3634eb0b422776d4|hash_0000197dcdc064a666084d28b5768412adc74e</items>
 			</hash_090019a0c97b82d0aec8bedb35b53d51b24b9e>
-			<hash_0900196c14ba36d26fc23f1fca9cf1ad8c8977>
-				<name>Data Source [ChanId]</name>
-				<description></description>
-				<column_name>task_item_id</column_name>
-				<items>hash_00001904bd78f922dabf4627004ee442c2e7c1</items>
-			</hash_0900196c14ba36d26fc23f1fca9cf1ad8c8977>
 		</inputs>
 	</hash_000019f4d3764f35dd3f1610b3812cd271de2b>
 	<hash_000019d463200e6d032cfd4441622d21dccf6b>
@@ -1368,19 +1349,6 @@
 				<hard_return>on</hard_return>
 				<sequence>5</sequence>
 			</hash_100019ab011de727e71695c89c8150c4badf55>
-			<hash_100019e0a1ec228dd046ed1fa7e5c095eecba8>
-				<task_item_id>hash_0800195c508487120aab1ed9ffbda4dc0d7cb2</task_item_id>
-				<color_id>0</color_id>
-				<alpha>FF</alpha>
-				<graph_type_id>9</graph_type_id>
-				<consolidation_function_id>4</consolidation_function_id>
-				<cdef_id>0</cdef_id>
-				<value></value>
-				<gprint_id>hash_06001919414480d6897c8731c7dc6c5310653e</gprint_id>
-				<text_format>Channel:</text_format>
-				<hard_return></hard_return>
-				<sequence>6</sequence>
-			</hash_100019e0a1ec228dd046ed1fa7e5c095eecba8>
 		</items>
 		<inputs>
 			<hash_090019485c220f93e836289b23a2be4abb17ae>
@@ -1389,12 +1357,6 @@
 				<column_name>task_item_id</column_name>
 				<items>hash_000019ab011de727e71695c89c8150c4badf55|hash_0000192798d37bd7a59c07dbaf34d9ef5e3caf|hash_0000194343c2e353bdd85c9722ef9afa83b11d|hash_0000199348ee7e0961130d7b4fe9c886897ca8|hash_0000193ba148eccb53960ed1d81d30e5da827e</items>
 			</hash_090019485c220f93e836289b23a2be4abb17ae>
-			<hash_090019e45c631daad12bcb0540ac9668c97414>
-				<name>Data Source [ChanId]</name>
-				<description></description>
-				<column_name>task_item_id</column_name>
-				<items>hash_000019e0a1ec228dd046ed1fa7e5c095eecba8</items>
-			</hash_090019e45c631daad12bcb0540ac9668c97414>
 		</inputs>
 	</hash_000019d463200e6d032cfd4441622d21dccf6b>
 	<hash_000019569917d1bddcd9b594ba64c136104214>
@@ -1503,19 +1465,6 @@
 				<hard_return>on</hard_return>
 				<sequence>5</sequence>
 			</hash_100019ba5e861102bc8b84d684f75e50200603>
-			<hash_10001983ef85069a88f4a101735845043ef31f>
-				<task_item_id>hash_0800195c508487120aab1ed9ffbda4dc0d7cb2</task_item_id>
-				<color_id>0</color_id>
-				<alpha>FF</alpha>
-				<graph_type_id>9</graph_type_id>
-				<consolidation_function_id>4</consolidation_function_id>
-				<cdef_id>0</cdef_id>
-				<value></value>
-				<gprint_id>hash_06001919414480d6897c8731c7dc6c5310653e</gprint_id>
-				<text_format>Channel:</text_format>
-				<hard_return></hard_return>
-				<sequence>6</sequence>
-			</hash_10001983ef85069a88f4a101735845043ef31f>
 		</items>
 		<inputs>
 			<hash_09001982e7f24b9c955592c8407f4a2ad5b08f>
@@ -1524,12 +1473,6 @@
 				<column_name>task_item_id</column_name>
 				<items>hash_000019ba5e861102bc8b84d684f75e50200603|hash_000019dc1bff73c9d29d1d6d16309f333f0175|hash_000019a63454d713447a6a0fb9307b1aca1287|hash_000019d13f93f92362357dd20e070577cbdd32|hash_00001907c32290ac84d9b28ebe9cc5ecf3b6f8</items>
 			</hash_09001982e7f24b9c955592c8407f4a2ad5b08f>
-			<hash_090019698f1b117e154f4b25e254978ad8bf8b>
-				<name>Data Source [ChanId]</name>
-				<description></description>
-				<column_name>task_item_id</column_name>
-				<items>hash_00001983ef85069a88f4a101735845043ef31f</items>
-			</hash_090019698f1b117e154f4b25e254978ad8bf8b>
 		</inputs>
 	</hash_000019569917d1bddcd9b594ba64c136104214>
 	<hash_01001904ef4da0d125620474bcbb3a72c7356c>
@@ -1875,53 +1818,6 @@
 			</item_002>
 		</data>
 	</hash_010019c872bd28a553f261a29a5192aa482ce8>
-	<hash_01001935471e9ec2b014f12db866c23efe8366>
-		<name>Arris SB8200 DOCSIS Modem Stats - Up - ChanId</name>
-		<ds>
-			<t_name></t_name>
-			<name>|host_description| - Up - Channel ID |query_Chan|</name>
-			<data_input_id>hash_03001980e9e4c4191a5da189ae26d0e237f015</data_input_id>
-			<t_rra_id></t_rra_id>
-			<t_rrd_step></t_rrd_step>
-			<rrd_step>300</rrd_step>
-			<t_active></t_active>
-			<active>on</active>
-			<rra_items>hash_150019c21df5178e5c955013591239eb0afd46|hash_1500190d9c0af8b8acdc7807943937b3208e29|hash_1500196fc2d038fb42950138b0ce3e9874cc60|hash_150019e36f3adb9f152adfa5dc50fd2b23337e|hash_150019283ea2bf1634d92ce081ec82a634f513</rra_items>
-		</ds>
-		<items>
-			<hash_0800195c508487120aab1ed9ffbda4dc0d7cb2>
-				<t_data_source_name></t_data_source_name>
-				<data_source_name>ChanId</data_source_name>
-				<t_rrd_minimum></t_rrd_minimum>
-				<rrd_minimum>0</rrd_minimum>
-				<t_rrd_maximum></t_rrd_maximum>
-				<rrd_maximum>1000</rrd_maximum>
-				<t_data_source_type_id></t_data_source_type_id>
-				<data_source_type_id>1</data_source_type_id>
-				<t_rrd_heartbeat></t_rrd_heartbeat>
-				<rrd_heartbeat>600</rrd_heartbeat>
-				<t_data_input_field_id></t_data_input_field_id>
-				<data_input_field_id>0</data_input_field_id>
-			</hash_0800195c508487120aab1ed9ffbda4dc0d7cb2>
-		</items>
-		<data>
-			<item_000>
-				<data_input_field_id>hash_07001974af2e42dc12956c4817c2ef5d9983f9</data_input_field_id>
-				<t_value>on</t_value>
-				<value></value>
-			</item_000>
-			<item_001>
-				<data_input_field_id>hash_0700193b7caa46eb809fc238de6ef18b6e10d5</data_input_field_id>
-				<t_value>on</t_value>
-				<value></value>
-			</item_001>
-			<item_002>
-				<data_input_field_id>hash_070019d39556ecad6166701bfb0e28c5a11108</data_input_field_id>
-				<t_value>on</t_value>
-				<value></value>
-			</item_002>
-		</data>
-	</hash_01001935471e9ec2b014f12db866c23efe8366>
 	<hash_010019e1402f8817cc0ca194231a6b76066002>
 		<name>Arris SB8200 DOCSIS Modem Stats - Up - Power</name>
 		<ds>
@@ -2460,10 +2356,6 @@
 		<name>One decimal place</name>
 		<gprint_text>%8.1lf</gprint_text>
 	</hash_060019a5f953807d38dfc033526214caa301e4>
-	<hash_06001919414480d6897c8731c7dc6c5310653e>
-		<name>Exact Numbers</name>
-		<gprint_text>%8.0lf</gprint_text>
-	</hash_06001919414480d6897c8731c7dc6c5310653e>
 	<hash_040019a55df626d679506ee67b8ca46677c702>
 		<name>Arris SB8200 DOCSIS Modem Stats - Down</name>
 		<description>Downstream stats</description>
@@ -2638,33 +2530,44 @@
 				<graph_template_id>hash_000019569917d1bddcd9b594ba64c136104214</graph_template_id>
 				<rrd>
 					<item_000>
-						<snmp_field_name>ChanId</snmp_field_name>
-						<data_template_id>hash_01001935471e9ec2b014f12db866c23efe8366</data_template_id>
-						<data_template_rrd_id>hash_0800195c508487120aab1ed9ffbda4dc0d7cb2</data_template_rrd_id>
-					</item_000>
-					<item_001>
 						<snmp_field_name>Freq</snmp_field_name>
 						<data_template_id>hash_01001973b8629174b3c0da63ed2b42d017932a</data_template_id>
 						<data_template_rrd_id>hash_0800195308e3a5d44fcdb3d77ddf15bc205b7b</data_template_rrd_id>
-					</item_001>
+					</item_000>
 				</rrd>
 				<sv_graph>
-					<hash_1200197a56f6a12d5534c891a450da5ffb1f24>
+					<hash_120019480283ddceb3cff35cdfeab4249f9f96>
 						<field_name>name</field_name>
 						<sequence>1</sequence>
+						<text>|host_description| - Up - Frequency |query_Chan| ID |query_ChanId| </text>
+					</hash_120019480283ddceb3cff35cdfeab4249f9f96>
+					<hash_120019534f28da5ab7a00720bf990937f846fa>
+						<field_name>title</field_name>
+						<sequence>1</sequence>
+						<text>|host_description| - Up - Frequency |query_Chan| ID |query_ChanId| </text>
+					</hash_120019534f28da5ab7a00720bf990937f846fa>
+					<hash_1200197a56f6a12d5534c891a450da5ffb1f24>
+						<field_name>name</field_name>
+						<sequence>2</sequence>
 						<text>|host_description| - Up - Frequency |query_Chan|</text>
 					</hash_1200197a56f6a12d5534c891a450da5ffb1f24>
 					<hash_120019056b99d85f189e0697f37c72a9accb80>
 						<field_name>title</field_name>
-						<sequence>1</sequence>
+						<sequence>2</sequence>
 						<text>|host_description| - Up - Frequency |query_Chan|</text>
 					</hash_120019056b99d85f189e0697f37c72a9accb80>
 				</sv_graph>
 				<sv_data_source>
-					<hash_1300195fbfa234f04825683f8e56432145970e>
+					<hash_130019335ff9775f0e8855a3efaed376744d30>
 						<field_name>name</field_name>
 						<data_template_id>hash_01001973b8629174b3c0da63ed2b42d017932a</data_template_id>
 						<sequence>1</sequence>
+						<text>|host_description| - Up - Frequency |query_Chan| ID |query_ChanId| </text>
+					</hash_130019335ff9775f0e8855a3efaed376744d30>
+					<hash_1300195fbfa234f04825683f8e56432145970e>
+						<field_name>name</field_name>
+						<data_template_id>hash_01001973b8629174b3c0da63ed2b42d017932a</data_template_id>
+						<sequence>2</sequence>
 						<text>|host_description| - Up - Frequency |query_Chan|</text>
 					</hash_1300195fbfa234f04825683f8e56432145970e>
 					<hash_130019a6d66071bc459074a61f70839d0036a9>
@@ -2684,21 +2587,26 @@
 						<data_template_id>hash_010019e1402f8817cc0ca194231a6b76066002</data_template_id>
 						<data_template_rrd_id>hash_0800197f128914837e110170eab39d365ba607</data_template_rrd_id>
 					</item_000>
-					<item_001>
-						<snmp_field_name>ChanId</snmp_field_name>
-						<data_template_id>hash_01001935471e9ec2b014f12db866c23efe8366</data_template_id>
-						<data_template_rrd_id>hash_0800195c508487120aab1ed9ffbda4dc0d7cb2</data_template_rrd_id>
-					</item_001>
 				</rrd>
 				<sv_graph>
-					<hash_1200194ba256b1755587b6ca8fd66821409152>
+					<hash_12001948dad515f92f334f425c8adee4eec3c9>
 						<field_name>name</field_name>
 						<sequence>1</sequence>
+						<text>|host_description| - Up - Power |query_Chan| ID |query_ChanId|</text>
+					</hash_12001948dad515f92f334f425c8adee4eec3c9>
+					<hash_1200190720374beaa5ae6544311cb05b48b697>
+						<field_name>title</field_name>
+						<sequence>1</sequence>
+						<text>|host_description| - Up - Power |query_Chan| ID |query_ChanId|</text>
+					</hash_1200190720374beaa5ae6544311cb05b48b697>
+					<hash_1200194ba256b1755587b6ca8fd66821409152>
+						<field_name>name</field_name>
+						<sequence>2</sequence>
 						<text>|host_description| - Up - Power |query_Chan|</text>
 					</hash_1200194ba256b1755587b6ca8fd66821409152>
 					<hash_120019c989c224ecc8b8dd01587a78ce8a2273>
 						<field_name>title</field_name>
-						<sequence>1</sequence>
+						<sequence>2</sequence>
 						<text>|host_description| - Up - Power |query_Chan|</text>
 					</hash_120019c989c224ecc8b8dd01587a78ce8a2273>
 				</sv_graph>
@@ -2709,10 +2617,16 @@
 						<sequence>1</sequence>
 						<text>|host_description| - Up - Channel ID |query_Chan|</text>
 					</hash_1300190d5e4d8abcaae167d22a1b266ea3ec6c>
-					<hash_130019aba1d176b6f5df07ee9261f4616f56d1>
+					<hash_130019abafcad89910df2c8a07833b9d1fcf66>
 						<field_name>name</field_name>
 						<data_template_id>hash_010019e1402f8817cc0ca194231a6b76066002</data_template_id>
 						<sequence>1</sequence>
+						<text>|host_description| - Up - Power |query_Chan| ID |query_ChanId|</text>
+					</hash_130019abafcad89910df2c8a07833b9d1fcf66>
+					<hash_130019aba1d176b6f5df07ee9261f4616f56d1>
+						<field_name>name</field_name>
+						<data_template_id>hash_010019e1402f8817cc0ca194231a6b76066002</data_template_id>
+						<sequence>2</sequence>
 						<text>|host_description| - Up - Power |query_Chan|</text>
 					</hash_130019aba1d176b6f5df07ee9261f4616f56d1>
 				</sv_data_source>
@@ -2722,33 +2636,44 @@
 				<graph_template_id>hash_000019d463200e6d032cfd4441622d21dccf6b</graph_template_id>
 				<rrd>
 					<item_000>
-						<snmp_field_name>ChanId</snmp_field_name>
-						<data_template_id>hash_01001935471e9ec2b014f12db866c23efe8366</data_template_id>
-						<data_template_rrd_id>hash_0800195c508487120aab1ed9ffbda4dc0d7cb2</data_template_rrd_id>
-					</item_000>
-					<item_001>
 						<snmp_field_name>Width</snmp_field_name>
 						<data_template_id>hash_0100195d911eedc6ca5fb62d641be96883bf95</data_template_id>
 						<data_template_rrd_id>hash_080019a573eb0e5ad2b57fbd3b4a05c4741896</data_template_rrd_id>
-					</item_001>
+					</item_000>
 				</rrd>
 				<sv_graph>
-					<hash_120019e46d74102d6ab3f892e82bd5c803b618>
+					<hash_120019453363a2cad90c0a6ec9e96512113650>
 						<field_name>name</field_name>
 						<sequence>1</sequence>
+						<text>|host_description| - Up - Width |query_Chan| ID |query_ChanId|</text>
+					</hash_120019453363a2cad90c0a6ec9e96512113650>
+					<hash_12001978a30c5a4d519b87c7a9fe430485fe79>
+						<field_name>title</field_name>
+						<sequence>1</sequence>
+						<text>|host_description| - Up - Width |query_Chan| ID |query_ChanId|</text>
+					</hash_12001978a30c5a4d519b87c7a9fe430485fe79>
+					<hash_120019e46d74102d6ab3f892e82bd5c803b618>
+						<field_name>name</field_name>
+						<sequence>2</sequence>
 						<text>|host_description| - Up - Width |query_Chan|</text>
 					</hash_120019e46d74102d6ab3f892e82bd5c803b618>
 					<hash_120019eeda2ef28179f15c3c611a358f0c3484>
 						<field_name>title</field_name>
-						<sequence>1</sequence>
+						<sequence>2</sequence>
 						<text>|host_description| - Up - Width |query_Chan|</text>
 					</hash_120019eeda2ef28179f15c3c611a358f0c3484>
 				</sv_graph>
 				<sv_data_source>
-					<hash_1300198833cf0ff365ce098adf3b82b48dec3e>
+					<hash_130019171b7cbbb074a74c2d616e9c35ebb8db>
 						<field_name>name</field_name>
 						<data_template_id>hash_0100195d911eedc6ca5fb62d641be96883bf95</data_template_id>
 						<sequence>1</sequence>
+						<text>|host_description| - Up - Width |query_Chan| ID |query_ChanId|</text>
+					</hash_130019171b7cbbb074a74c2d616e9c35ebb8db>
+					<hash_1300198833cf0ff365ce098adf3b82b48dec3e>
+						<field_name>name</field_name>
+						<data_template_id>hash_0100195d911eedc6ca5fb62d641be96883bf95</data_template_id>
+						<sequence>2</sequence>
 						<text>|host_description| - Up - Width |query_Chan|</text>
 					</hash_1300198833cf0ff365ce098adf3b82b48dec3e>
 					<hash_13001986443b979f333817f82fe32dfd1dea10>
