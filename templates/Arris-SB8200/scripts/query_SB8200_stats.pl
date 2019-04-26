@@ -8,10 +8,10 @@
 # Sample invocation:
 #
 # Up
-#   query_SB8200_stats.pl HOST up index 
+#   query_sb8200_stats.pl HOST up index 
 #
 # Down
-#   query_SB8200_stats.pl HOST down index
+#   query_sb8200_stats.pl HOST down index
 #
 ######################
 ## Revision History ##
@@ -174,14 +174,14 @@ sub convert_time {
 
 # Print the help text
 sub show_help {
-  print "usage:\n\n./query_SB8200_stats.pl HOST Up index\n" .
-	"./query_SB8200_stats.pl HOST Up num_indexes\n" .
-	"./query_SB8200_stats.pl HOST Up query (Chan,ChanId,Stat,Type,Freq,Width,Power)\n" .
-	"./query_SB8200_stats.pl HOST Up get (Chan,ChanId,Stat,Type,Freq,Width,Power) INDEX\n\n" .
-	"./query_SB8200_stats.pl HOST Down index\n" .
-	"./query_SB8200_stats.pl HOST Down num_indexes\n" .
-	"./query_SB8200_stats.pl HOST Down query (Chan,Stat,Type,Freq,Power,SNR,CorrCw,UncorrCW)\n" .
-	"./query_SB8200_stats.pl HOST Down get (Chan,Stat,Type,Freq,Power,SNR,CorrCw,UncorrCW) INDEX\n\n";
+  print "usage:\n\n./query_sb8200_stats.pl HOST Up index\n" .
+	"./query_sb8200_stats.pl HOST Up num_indexes\n" .
+	"./query_sb8200_stats.pl HOST Up query (Chan,ChanId,Stat,Type,Freq,Width,Power)\n" .
+	"./query_sb8200_stats.pl HOST Up get (Chan,ChanId,Stat,Type,Freq,Width,Power) INDEX\n\n" .
+	"./query_sb8200_stats.pl HOST Down index\n" .
+	"./query_sb8200_stats.pl HOST Down num_indexes\n" .
+	"./query_sb8200_stats.pl HOST Down query (Chan,Stat,Type,Freq,Power,SNR,CorrCw,UncorrCW)\n" .
+	"./query_sb8200_stats.pl HOST Down get (Chan,Stat,Type,Freq,Power,SNR,CorrCw,UncorrCW) INDEX\n\n";
   exit;
 }
 
@@ -195,8 +195,11 @@ sub fetch_json {
 	my $content = $response->content();
 	my %data;
 	$content =~ tr/\r\n//d; # Strip all the linefeeds
+	# New format as of SB8200.0200.174F.311915.NSH.RT.NA
+	#<tr align='left'>      <td>31</td>      <td>Locked</td>      <td>QAM256</td>      <td>723000000 Hz</td>      <td>2.1 dBmV</td>      <td>37.7 dB</td>      <td>2</td>      <td>0</td>   </tr>
 	# parse the down stats
-	while ($content =~ /<tr>\s*<td>(\d*)<\/td>\s*<td>(\w+)<\/td>\s*<td>(QAM\d+|Other)<\/td>\s*<td>(\d*)\s*Hz<\/td>\s*<td>([-]?[0-9]*\.?[0-9]+)\s*dBmV<\/td>\s*<td>([0-9]*\.?[0-9]+)\s*dB<\/td>\s*<td>(\d*)<\/td>\s*<td>(\d*)<\/td>\s*<\/tr>/g) {
+	#while ($content =~ /<tr>\s*<td>(\d*)<\/td>\s*<td>(\w+)<\/td>\s*<td>(QAM\d+|Other)<\/td>\s*<td>(\d*)\s*Hz<\/td>\s*<td>([-]?[0-9]*\.?[0-9]+)\s*dBmV<\/td>\s*<td>([0-9]*\.?[0-9]+)\s*dB<\/td>\s*<td>(\d*)<\/td>\s*<td>(\d*)<\/td>\s*<\/tr>/g) {
+	while ($content =~ /<tr\salign=\'left\'>\s*<td>(\d*)<\/td>\s*<td>(\w+)<\/td>\s*<td>(QAM\d+|Other)<\/td>\s*<td>(\d*)\s*Hz<\/td>\s*<td>([-]?[0-9]*\.?[0-9]+)\s*dBmV<\/td>\s*<td>([0-9]*\.?[0-9]+)\s*dB<\/td>\s*<td>(\d*)<\/td>\s*<td>(\d*)<\/td>\s*<\/tr>/g) {
 		#print "channel:$1\n";
 		push @{$data{Down}{Chan}}, $1;
 		#print "status:$2\n";
@@ -215,8 +218,11 @@ sub fetch_json {
 		push @{$data{Down}{UncorrCw}}, $8;
 	}
 
+	# New format as of SB8200.0200.174F.311915.NSH.RT.NA
+	#<tr align='left'>      <td>1</td>      <td>4</td>      <td>Locked</td>      <td>SC-QAM Upstream</td>      <td>36700000 Hz</td>      <td>6400000 Hz</td>      <td>55.0 dBmV</td>   </tr> 
 	# Parse the up stats
-	while ($content =~ /<tr>\s*<td>(\d*)<\/td>\s*<td>(\d*)<\/td>\s*<td>(\w*)<\/td>\s*<td>([a-zA-Z0-9-]+)<\/td>\s*<td>(\d*)\s*Hz<\/td>\s*<td>(\d*)\s*Hz<\/td>\s*<td>([0-9]*\.?[0-9]+)\s*dBmV<\/td>\s*/g) {
+	#while ($content =~ /<tr>\s*<td>(\d*)<\/td>\s*<td>(\d*)<\/td>\s*<td>(\w*)<\/td>\s*<td>([a-zA-Z0-9-]+)<\/td>\s*<td>(\d*)\s*Hz<\/td>\s*<td>(\d*)\s*Hz<\/td>\s*<td>([0-9]*\.?[0-9]+)\s*dBmV<\/td>\s*/g) {
+	while ($content =~ /<tr\salign=\'left\'>\s*<td>(\d*)<\/td>\s*<td>(\d*)<\/td>\s*<td>(\w*)<\/td>\s*<td>([a-zA-Z0-9-\s]+)<\/td>\s*<td>(\d*)\s*Hz<\/td>\s*<td>(\d*)\s*Hz<\/td>\s*<td>([0-9]*\.?[0-9]+)\s*dBmV<\/td>\s*/g) {
 		#print "channel:$1\n";
 		push @{$data{Up}{Chan}}, $1;
 		#print "channel id:$2\n";
