@@ -19,11 +19,14 @@
 #
 # v0.01	3/9/2018 Brian Rudy (brudyNO@SPAMpraecogito.com)
 #	First working version. Must use memcached as the SB8200 responds too slowly to use an indexed query without it.
-# 
+#
+# v0.02 12/27/2020 Brian Rudy (brudyNO@SPAMpraecogito.com) 
+#       Added support for https and authentication as required by AB01.01.009.51_080720_183.0A.NSH
 
 use strict;
 use JSON -support_by_pp;
 use HTTP::Request;
+use HTTP::Cookies;
 use LWP::UserAgent;
 
 my $memcached_server;
@@ -31,6 +34,9 @@ my $memcached_server;
 use Cache::Memcached;
 use IO::Socket::INET;
 $memcached_server = "localhost:11211";
+
+# location where the cookies are stored
+my $cookie_file = "/tmp/sb8200_cookies.lwp";
 #
 # The API JSON check interval in seconds. Should be slightly less than your polling interval to ensure fresh data each polling cycle
 my $check_interval = 120;
@@ -41,14 +47,15 @@ my $max_loop_time = 60;
 #
 
 my $host = $ARGV[0];
-my $mode = $ARGV[1];
+my $auth = $ARGV[1]; # hashed authentication username:password passed through btoa
+my $mode = $ARGV[2];
 
-unless ((defined $host) && (($mode eq "Up") || ($mode eq "Down"))) {
+unless ((defined $host && defined $auth) && (($mode eq "Up") || ($mode eq "Down"))) {
   # Missing input params
   show_help();
 }
 
-my $json_url = "http://$host/cmconnectionstatus.html";
+my $json_url = "https://$host/cmconnectionstatus.html";
 my $content;
 
 eval{
@@ -136,24 +143,24 @@ eval{
     my $json_text = $json->allow_nonref->utf8->relaxed->escape_slash->loose->allow_singlequote->allow_barekey->decode($content);
 
     if (($mode eq "Up") || ($mode eq "Down")) {
-        if (($ARGV[2] eq "get") && (defined $ARGV[3]) && (defined $ARGV[4])) {
-		if (defined $json_text->{$mode}->{$ARGV[3]}->[$ARGV[4]]) {
-			print $json_text->{$mode}->{$ARGV[3]}->[$ARGV[4]];
+        if (($ARGV[3] eq "get") && (defined $ARGV[4]) && (defined $ARGV[5])) {
+		if (defined $json_text->{$mode}->{$ARGV[4]}->[$ARGV[5]]) {
+			print $json_text->{$mode}->{$ARGV[4]}->[$ARGV[5]];
 		}
 	}
-	elsif (($ARGV[2] eq "query") && (defined $ARGV[3])) {
-		if (defined $json_text->{$mode}->{$ARGV[3]}) {
-			for my $element (0..$#{$json_text->{$mode}->{$ARGV[3]}}) {
-				print "$element:$json_text->{$mode}->{$ARGV[3]}->[$element]\n";
+	elsif (($ARGV[3] eq "query") && (defined $ARGV[4])) {
+		if (defined $json_text->{$mode}->{$ARGV[4]}) {
+			for my $element (0..$#{$json_text->{$mode}->{$ARGV[4]}}) {
+				print "$element:$json_text->{$mode}->{$ARGV[4]}->[$element]\n";
 			}
 		}
 	}
-	elsif ($ARGV[2] eq "index") {
+	elsif ($ARGV[3] eq "index") {
 		for my $element (0..$#{$json_text->{$mode}->{Chan}}) {
 			print "$element\n";
 		}
 	}
-	elsif ($ARGV[2] eq "num_indexes") {
+	elsif ($ARGV[3] eq "num_indexes") {
 		print scalar(@{$json_text->{$mode}->{Chan}}) . "\n";
 	}
 	else {
@@ -174,25 +181,79 @@ sub convert_time {
 
 # Print the help text
 sub show_help {
-  print "usage:\n\n./query_sb8200_stats.pl HOST Up index\n" .
-	"./query_sb8200_stats.pl HOST Up num_indexes\n" .
-	"./query_sb8200_stats.pl HOST Up query (Chan,ChanId,Stat,Type,Freq,Width,Power)\n" .
-	"./query_sb8200_stats.pl HOST Up get (Chan,ChanId,Stat,Type,Freq,Width,Power) INDEX\n\n" .
-	"./query_sb8200_stats.pl HOST Down index\n" .
-	"./query_sb8200_stats.pl HOST Down num_indexes\n" .
-	"./query_sb8200_stats.pl HOST Down query (Chan,Stat,Type,Freq,Power,SNR,CorrCw,UncorrCW)\n" .
-	"./query_sb8200_stats.pl HOST Down get (Chan,Stat,Type,Freq,Power,SNR,CorrCw,UncorrCW) INDEX\n\n";
+  print "usage:\n\n./query_sb8200_stats.pl HOST auth_hash Up index\n" .
+	"./query_sb8200_stats.pl HOST auth_hash Up num_indexes\n" .
+	"./query_sb8200_stats.pl HOST auth_hash Up query (Chan,ChanId,Stat,Type,Freq,Width,Power)\n" .
+	"./query_sb8200_stats.pl HOST auth_hash Up get (Chan,ChanId,Stat,Type,Freq,Width,Power) INDEX\n\n" .
+	"./query_sb8200_stats.pl HOST auth_hash Down index\n" .
+	"./query_sb8200_stats.pl HOST auth_hash Down num_indexes\n" .
+	"./query_sb8200_stats.pl HOST auth_hash Down query (Chan,Stat,Type,Freq,Power,SNR,CorrCw,UncorrCW)\n" .
+	"./query_sb8200_stats.pl HOST auth_hash Down get (Chan,Stat,Type,Freq,Power,SNR,CorrCw,UncorrCW) INDEX\n\n";
   exit;
+}
+
+# Authenticate again
+sub authenticate {
+	my ($url,$cauth) = @_;
+	# For some reason this seems to fail, so we need to attempt a few times
+	for (1..4) {	
+		# Login with the hashed credentials
+		my $request = HTTP::Request->new(GET => $url . "?" . $cauth);
+		my $ua = LWP::UserAgent->new;
+		my $response = $ua->request($request);
+		# Should do some error checking
+		my $content = $response->content();
+		#print "I received the following content: $content\n";
+		unless ($content =~ /password/) {
+			# Authentication succeeded, move on to the next step 
+			#print "Authentication succeeded, continuing\n";	
+			return $content;
+		} else {
+			# Authentication failed
+			#print "Authentication failed, trying again...\n";
+		}
+	}
+	# If we reach this point we have failed to log in for times and need to abort
+	die("Failed to authenticate, check credentials!");
+}
+
+# Check the current authentication state and get the data
+sub check_auth {
+	my ($url,$cauth) = @_;
+	# Try to fetch the URL with the cached credential cookie
+	my $cookie_jar = HTTP::Cookies->new(
+   		file     => $cookie_file,
+   		autosave => 1,
+	);
+	my $request = HTTP::Request->new(GET => $url);
+	my $ua = LWP::UserAgent->new;
+	$ua->cookie_jar($cookie_jar);
+	my $response = $ua->request($request);
+	my $content = $response->content();
+	#print "I received the following content from check_auth: $content\n";
+	if ($content =~ /password/) {
+		# Authentication failed
+		#print "Credential cookie expired, reauthenticating...\n";
+		my $credential = authenticate($url,$cauth);
+		# Save the credential as a cookie
+		$ua->cookie_jar->set_cookie(0, "credential", $credential, "/", $host, 443 , 0, 0, 365 * 86400, 0);
+		# get the page again
+		my $new_response = $ua->request($request);
+		$content = $new_response->content();
+		# if the page still contains password, something isn't working
+		if ($content =~ /password/) {
+			die("Cookie authentication failed, something is wrong!");
+		}
+	}
+	# Authentication succeeded, move on to the next step 
+	#print "Returning authenticated content\n";
+	return $content;
 }
 
 # Get the API JSON
 sub fetch_json { 
 	my ($url) = @_;
-	my $request = HTTP::Request->new(GET => $url);
-	my $ua = LWP::UserAgent->new;
-	my $response = $ua->request($request);
-	# Should do some error checking
-	my $content = $response->content();
+	my $content = check_auth($url,$auth);
 	my %data;
 	$content =~ tr/\r\n//d; # Strip all the linefeeds
 	# New format as of SB8200.0200.174F.311915.NSH.RT.NA
