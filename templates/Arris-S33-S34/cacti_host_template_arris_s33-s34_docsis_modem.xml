@@ -1,6 +1,6 @@
 <cacti>	
 	<hash_0200237a50fe06e11a6e3ec4d9abe30c62deb5>
-		<name>Arris S33 DOCSIS Modem</name>
+		<name>Arris S33-S34 DOCSIS Modem</name>
 		<graph_templates>hash_0000239a63a75b9b2aef0706fe30b881127d4e</graph_templates>
 		<data_queries>hash_040023f6f4b366ec6dbc4806e6faccbfaab57f|hash_040023fbd470e1fae86ac9b49331edfaa22e6d</data_queries>
 	</hash_0200237a50fe06e11a6e3ec4d9abe30c62deb5>
@@ -1932,7 +1932,7 @@
 				<t_rrd_minimum></t_rrd_minimum>
 				<rrd_minimum>0</rrd_minimum>
 				<t_rrd_maximum></t_rrd_maximum>
-				<rrd_maximum>10000000</rrd_maximum>
+				<rrd_maximum>100000000</rrd_maximum>
 				<t_data_source_type_id></t_data_source_type_id>
 				<data_source_type_id>1</data_source_type_id>
 				<t_rrd_heartbeat></t_rrd_heartbeat>
@@ -1943,7 +1943,7 @@
 		</items>
 		<data>
 			<item_000>
-				<data_input_field_id>hash_070023d39556ecad6166701bfb0e28c5a11108</data_input_field_id>
+				<data_input_field_id>hash_07002374af2e42dc12956c4817c2ef5d9983f9</data_input_field_id>
 				<t_value>on</t_value>
 				<value></value>
 			</item_000>
@@ -1953,7 +1953,7 @@
 				<value></value>
 			</item_001>
 			<item_002>
-				<data_input_field_id>hash_07002374af2e42dc12956c4817c2ef5d9983f9</data_input_field_id>
+				<data_input_field_id>hash_070023d39556ecad6166701bfb0e28c5a11108</data_input_field_id>
 				<t_value>on</t_value>
 				<value></value>
 			</item_002>
