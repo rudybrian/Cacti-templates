@@ -29,6 +29,7 @@ use JSON -support_by_pp;
 use HTTP::Request;
 use HTTP::Cookies;
 use LWP::UserAgent;
+use IO::Socket::SSL;
 use Digest::HMAC_MD5;
 use Digest::SHA qw(hmac_sha256_hex);
 use Encode;
@@ -50,6 +51,8 @@ my $max_loop_time = 60;
 #
 ###### Do not edit below here unless you know what you are doing
 #
+# We need to disable certificate hostname validation because the device uses a self-signed cert
+$ENV{PERL_LWP_SSL_VERIFY_HOSTNAME} = 0;
 
 my $host = $ARGV[0];
 my $passwd = $ARGV[1];
@@ -244,7 +247,7 @@ sub auth_stage1 {
 	my $encoded_data = '{"Login":{"Action":"request","Username":"admin","LoginPassword":"","Captcha":"","PrivateLogin":"LoginPassword"}}'; 
 	my $request = HTTP::Request->new('POST', $url, $header, $encoded_data);
 	#print(Dumper($request));
-	my $ua = LWP::UserAgent->new;
+	my $ua = LWP::UserAgent->new(ssl_opts => { SSL_verify_mode => SSL_VERIFY_NONE });
 	my $response = $ua->request($request);
 	# Should do some error checking
 	if ($response->code == 200) {
@@ -270,6 +273,7 @@ sub auth_stage1 {
 		}
 	} else {
 		# If we reach this point we have failed to log in for times and need to abort
+		#print "stage1: I received the following content: " . $response->content() . "\n";
 		die("Abnormal response during authentication (stage1)!");
         }
 }
@@ -285,7 +289,7 @@ sub auth_stage2 {
         my $encoded_data = '{"Login":{"Action":"login","Username":"admin","LoginPassword":"' . $passkey . '","Captcha":"","PrivateLogin":"LoginPassword"}}';
 	my $cookie_jar = HTTP::Cookies->new();
         my $request = HTTP::Request->new('POST', $url, $header, $encoded_data);
-	my $ua = LWP::UserAgent->new;
+	my $ua = LWP::UserAgent->new(ssl_opts => { SSL_verify_mode => SSL_VERIFY_NONE });
 	$ua->cookie_jar($cookie_jar);
 	$ua->cookie_jar->set_cookie(0, "uid", $cookie, "/", $host, 443 , 0, 1, 365 * 86400, 0);
 	$ua->cookie_jar->set_cookie(0, "PrivateKey", $privkey, "/", $host, 443 , 0, 1, 365 * 86400, 0);
@@ -329,7 +333,7 @@ sub fetch_json {
 	my $cookie_jar = HTTP::Cookies->new();
 	#print "POSTing request: $encoded_data using auth: $auth, cookie: uid:" . $stage1_reply->{"Cookie"} . ", PrivateKey: $privkey\n";
         my $request = HTTP::Request->new('POST', $url, $header, $encoded_data);
-	my $ua = LWP::UserAgent->new;
+	my $ua = LWP::UserAgent->new(ssl_opts => { SSL_verify_mode => SSL_VERIFY_NONE });
 	$ua->cookie_jar($cookie_jar);
 	$ua->cookie_jar->set_cookie(0, "uid", $stage1_reply->{"Cookie"}, "/", $host, 443 , 0, 1, 365 * 86400, 0);
 	$ua->cookie_jar->set_cookie(0, "PrivateKey", $privkey, "/", $host, 443 , 0, 1, 365 * 86400, 0);
