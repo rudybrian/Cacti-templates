@@ -1,0 +1,32 @@
+<interface>
+	<name>Unifi Pro Temperature Stats</name>
+	<description>Gets the temperature stats from a Unifi Pro Switch</description>
+	<oid_index>.1.3.6.1.4.1.4413.1.1.43.1.8.1.2.1</oid_index>
+	<index_order>sensorIndex</index_order>
+	<index_order_type>numeric</index_order_type>
+	<index_title_format>|chosen_order_field|</index_title_format>
+
+	<fields>
+		<sensorIndex>
+			<name>Index</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.4413.1.1.43.1.8.1.2.1</oid>
+		</sensorIndex>
+		<sensorState>
+			<name>Sensor State</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.4413.1.1.43.1.8.1.4.1</oid>
+		</sensorState>
+		<sensorTemperature>
+			<name>Sensor Temperature</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.4413.1.1.43.1.8.1.5.1</oid>
+		</sensorTemperature>
+	</fields>
+</interface>

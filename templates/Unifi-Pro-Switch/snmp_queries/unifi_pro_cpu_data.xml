@@ -1,0 +1,41 @@
+<query>
+	<name>Unifi Pro CPU Stats</name>
+	<description>Gets the CPU stats from a Unifi Pro Switch</description>
+	<oid_index>.1.3.6.1.4.1.4413.1.1.1.1.4.9</oid_index>
+	<oid_index_parse>OID/REGEXP:.*\.([0-9]{1,3})$</oid_index_parse>
+	<index_order>sensorIndex</index_order>
+	<index_order_type>numeric</index_order_type>
+	<index_title_format>|chosen_order_field|</index_title_format>
+
+	<fields>
+		<cpuIndex>
+			<name>Index</name>
+			<method>walk</method>
+			<source>OID/REGEXP:.*\.([0-9]{1,3})$</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.4413.1.1.1.1.4.9</oid>
+			
+		</cpuIndex>
+		<fiveSec>
+			<name>5 Seconds</name>
+			<method>walk</method>
+			<source>VALUE/REGEXP:.*5 Secs \( ([0-9]{1,3})\..*$</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.4413.1.1.1.1.4.9</oid>
+		</fiveSec>
+		<sixtySec>
+			<name>60 Seconds</name>
+			<method>walk</method>
+			<source>VALUE/REGEXP:.*60 Secs \( ([0-9]{1,3})\..*$</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.4413.1.1.1.1.4.9</oid>
+		</sixtySec>
+		<threehundredSec>
+			<name>300 Seconds</name>
+			<method>walk</method>
+			<source>VALUE/REGEXP:.*300 Secs \( ([0-9]{1,3})\..*$</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.4413.1.1.1.1.4.9</oid>
+		</threehundredSec>
+	</fields>
+</query>
