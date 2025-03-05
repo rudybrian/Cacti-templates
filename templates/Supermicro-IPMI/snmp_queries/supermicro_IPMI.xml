@@ -1,0 +1,82 @@
+<interface>
+	<name>Supermicro Sensor Data</name>
+	<description>Gets the sensor readings and thresholds from Supermicro servers via IPMI</description>
+	<oid_index>.1.3.6.1.4.1.21317.1.3.1.1</oid_index>
+	<oid_index_parse>OID/REGEXP:.*\.([0-9]{1,3})$</oid_index_parse>
+	<index_order>sensorIndex:sensorNumber:sensorIDString</index_order>
+	<index_order_type>numeric</index_order_type>
+	<index_title_format>|chosen_order_field|</index_title_format>
+
+	<fields>
+		<sensorIndex>
+			<name>Index</name>
+			<method>walk</method>
+			<source>OID/REGEXP:.*\.([0-9]{1,3})$</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.21317.1.3.1.1</oid>
+		</sensorIndex>
+		<sensorNumber>
+			<name>Sensor Number</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.21317.1.3.1.1</oid>
+		</sensorNumber>
+		<sensorIDString>
+			<name>Sensor ID String</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.21317.1.3.1.13</oid>
+		</sensorIDString>
+		<sensorReading>
+			<name>Sensor Reading</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.21317.1.3.1.2</oid>
+		</sensorReading>
+		<lncThreshold>
+			<name>Lower Non-Critical Threshold</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.21317.1.3.1.5</oid>
+		</lncThreshold>
+		<lcThreshold>
+			<name>Lower Critical Threshold</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.21317.1.3.1.6</oid>
+		</lcThreshold>
+		<lnrThreshold>
+			<name>Lower Non-Recoverable Threshold</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.21317.1.3.1.7</oid>
+		</lnrThreshold>
+		<uncThreshold>
+			<name>Upper Non-Critical Threshold</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.21317.1.3.1.8</oid>
+		</uncThreshold>
+		<ucThreshold>
+			<name>Upper Critical Threshold</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.21317.1.3.1.9</oid>
+		</ucThreshold>
+		<unrThreshold>
+			<name>Upper Non-Recoverable Threshold</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.21317.1.3.1.10</oid>
+		</unrThreshold>
+	</fields>
+</interface>
