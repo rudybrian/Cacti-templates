@@ -1,0 +1,124 @@
+<interface>
+	<name>Nvidia GPU Statistics</name>
+	<description>Get Nvidia GPU statistics via nvgpu</description>
+	<oid_index>.1.3.6.1.4.1.2021.13.42.2.1.1</oid_index>
+	<index_order>gpuId:nvCtrlProductName</index_order>
+	<index_order_type>numeric</index_order_type>
+	<index_title_format>|chosen_order_field|</index_title_format>
+
+	<fields>
+		<gpuId>
+			<name>Id</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.2021.13.42.2.1.1</oid>
+		</gpuId>
+		<nvCtrlProductName>
+			<name>Product Name</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.2021.13.42.2.1.2</oid>
+		</nvCtrlProductName>
+		<nvCtrlVBiosVersion>
+			<name>BIOS Version</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.2021.13.42.2.1.3</oid>
+		</nvCtrlVBiosVersion>
+		<nvCtrlNvidiaDriverVersion>
+			<name>Driver Version</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.2021.13.42.2.1.4</oid>
+		</nvCtrlNvidiaDriverVersion>
+		<nvCtrlGPUUUID>
+			<name>UUID</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.2021.13.42.2.1.26</oid>
+		</nvCtrlGPUUUID>
+
+		<nvCtrlVideoRam>
+			<name>Video RAM</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.2021.13.42.2.1.8</oid>
+		</nvCtrlVideoRam>
+		<nvCtrlGPUCoreTemp>
+			<name>Core Temperature</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.2021.13.42.2.1.10</oid>
+		</nvCtrlGPUCoreTemp>
+		<nvCtrlGPUMaxCoreThreshold>
+			<name>Max Core Threshold</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.2021.13.42.2.1.13</oid>
+		</nvCtrlGPUMaxCoreThreshold>
+		<nvCtrlGPUCurrentGPUClockFreq>
+			<name>GPU Clock</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.2021.13.42.2.1.24</oid>
+		</nvCtrlGPUCurrentGPUClockFreq>
+		<nvCtrlGPUCurrentMemClockFreq>
+			<name>Memory Clock</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.2021.13.42.2.1.25</oid>
+		</nvCtrlGPUCurrentMemClockFreq>
+		<nvCtrlGPUPerformanceState>
+			<name>Performance State</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.2021.13.42.2.1.27</oid>
+		</nvCtrlGPUPerformanceState>
+		<nvCtrlGPUFanSpeed>
+			<name>Fan Speed</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.2021.13.42.2.1.28</oid>
+		</nvCtrlGPUFanSpeed>
+		<nvCtrlGPUUtil>
+			<name>Utilization</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.2021.13.42.2.1.29</oid>
+		</nvCtrlGPUUtil>
+		<nvCtrlVideoRamUsed>
+			<name>RAM Used</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.2021.13.42.2.1.30</oid>
+		</nvCtrlVideoRamUsed>
+		<nvCtrlGPUPowerDraw>
+			<name>Power Draw</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.2021.13.42.2.1.31</oid>
+		</nvCtrlGPUPowerDraw>
+		<nvCtrlGPUPowerLimit>
+			<name>Power Limit</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.2021.13.42.2.1.32</oid>
+		</nvCtrlGPUPowerLimit>
+	</fields>
+</interface>
