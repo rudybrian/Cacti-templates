@@ -1,0 +1,27 @@
+<query>
+	<name>Coral TPU Stats</name>
+	<description>Get current temperature from Coral TPUs with this feature</description>
+	<oid_index>.1.3.6.1.4.1.8072.1.3.2.4.1.2.10.99.111.114.97.108.116.101.109.112.115</oid_index>
+	<oid_index_parse>OID/REGEXP:.*\.([0-9]{1,3})$</oid_index_parse>
+	<index_order>tpuIndex</index_order>
+	<index_order_type>numeric</index_order_type>
+	<index_title_format>|chosen_order_field|</index_title_format>
+
+	<fields>
+		<tpuIndex>
+			<name>Index</name>
+			<method>walk</method>
+			<source>OID/REGEXP:.*\.([0-9]{1,3})$</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.8072.1.3.2.4.1.2.10.99.111.114.97.108.116.101.109.112.115</oid>
+			
+		</tpuIndex>
+		<tpuTemp>
+			<name>Temperature</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.8072.1.3.2.4.1.2.10.99.111.114.97.108.116.101.109.112.115</oid>
+		</tpuTemp>
+	</fields>
+</query>

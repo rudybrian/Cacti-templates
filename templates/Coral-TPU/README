@@ -1,0 +1,5 @@
+---Installation
+
+Copy the coral-temps.pl script to /usr/local/bin
+Copy TPU.conf to /etc/snmp/snmpd.conf.d/ and restart snmpd
+
