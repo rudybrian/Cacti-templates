@@ -1,5 +1,29 @@
----Installation
+Installation
 
 Copy the coral-temps.pl script to /usr/local/bin
 Copy TPU.conf to /etc/snmp/snmpd.conf.d/ and restart snmpd
+
+
+Sample snmpwalk:
+
+me@cacti:~# snmpwalk -v2c -cpublic myhost .1.3.6.1.4.1.8072.1.3.2.4
+NET-SNMP-EXTEND-MIB::nsExtendOutLine."coraltp0".1 = STRING: 84800
+NET-SNMP-EXTEND-MIB::nsExtendOutLine."coraltp0".2 = STRING: 84800
+NET-SNMP-EXTEND-MIB::nsExtendOutLine."coraltp1".1 = STRING: 89800
+NET-SNMP-EXTEND-MIB::nsExtendOutLine."coraltp1".2 = STRING: 89800
+NET-SNMP-EXTEND-MIB::nsExtendOutLine."coraltp2".1 = STRING: 94800
+NET-SNMP-EXTEND-MIB::nsExtendOutLine."coraltp2".2 = STRING: 94800
+NET-SNMP-EXTEND-MIB::nsExtendOutLine."coraltemps".1 = STRING: 37800
+NET-SNMP-EXTEND-MIB::nsExtendOutLine."coraltemps".2 = STRING: 37550
+
+me@cacti:~# snmpwalk -v2c -cpublic -On myhost .1.3.6.1.4.1.8072.1.3.2.4
+.1.3.6.1.4.1.8072.1.3.2.4.1.2.8.99.111.114.97.108.116.112.48.1 = STRING: 84800
+.1.3.6.1.4.1.8072.1.3.2.4.1.2.8.99.111.114.97.108.116.112.48.2 = STRING: 84800
+.1.3.6.1.4.1.8072.1.3.2.4.1.2.8.99.111.114.97.108.116.112.49.1 = STRING: 89800
+.1.3.6.1.4.1.8072.1.3.2.4.1.2.8.99.111.114.97.108.116.112.49.2 = STRING: 89800
+.1.3.6.1.4.1.8072.1.3.2.4.1.2.8.99.111.114.97.108.116.112.50.1 = STRING: 94800
+.1.3.6.1.4.1.8072.1.3.2.4.1.2.8.99.111.114.97.108.116.112.50.2 = STRING: 94800
+.1.3.6.1.4.1.8072.1.3.2.4.1.2.10.99.111.114.97.108.116.101.109.112.115.1 = STRING: 38050
+.1.3.6.1.4.1.8072.1.3.2.4.1.2.10.99.111.114.97.108.116.101.109.112.115.2 = STRING: 37800
+
 

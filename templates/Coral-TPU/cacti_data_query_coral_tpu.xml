@@ -14,6 +14,21 @@
 						<data_template_id>hash_0101039f3a2bafb31a11d250e17e3045b837f4</data_template_id>
 						<data_template_rrd_id>hash_0801037b6e64c0474e07f42920ffef4af200d4</data_template_rrd_id>
 					</item_000>
+					<item_001>
+						<snmp_field_name>tpuTP0</snmp_field_name>
+						<data_template_id>hash_0101039f3a2bafb31a11d250e17e3045b837f4</data_template_id>
+						<data_template_rrd_id>hash_0801032ad0f6a599790db9beb9b3963baf63a1</data_template_rrd_id>
+					</item_001>
+					<item_002>
+						<snmp_field_name>tpuTP1</snmp_field_name>
+						<data_template_id>hash_0101039f3a2bafb31a11d250e17e3045b837f4</data_template_id>
+						<data_template_rrd_id>hash_0801037a589c534990e2be678a348634cf0228</data_template_rrd_id>
+					</item_002>
+					<item_003>
+						<snmp_field_name>tpuTP2</snmp_field_name>
+						<data_template_id>hash_0101039f3a2bafb31a11d250e17e3045b837f4</data_template_id>
+						<data_template_rrd_id>hash_080103521eed737041a261688b9aa0265e5527</data_template_rrd_id>
+					</item_003>
 				</rrd>
 				<sv_graph>
 					<hash_1201030e1fb50f2f165ff28b074710f9207a82>
@@ -158,7 +173,7 @@
 			<t_vertical_label></t_vertical_label>
 			<vertical_label>Degrees/C</vertical_label>
 			<t_image_format_id></t_image_format_id>
-			<image_format_id>1</image_format_id>
+			<image_format_id>3</image_format_id>
 			<t_height></t_height>
 			<height>120</height>
 			<t_width></t_width>
@@ -218,7 +233,7 @@
 			<hash_100103adec290cca5c818c7c0857706c21ecc0>
 				<graph_type_id>7</graph_type_id>
 				<task_item_id>hash_0801037b6e64c0474e07f42920ffef4af200d4</task_item_id>
-				<color_id>FF0000</color_id>
+				<color_id>6557D0</color_id>
 				<alpha>FF</alpha>
 				<consolidation_function_id>1</consolidation_function_id>
 				<cdef_id>hash_050103b714fdc920a1e3e7bb0f198cfbdc7ecc</cdef_id>
@@ -291,6 +306,120 @@
 				<dash_offset>0</dash_offset>
 				<sequence>4</sequence>
 			</hash_100103260979b53d2294c8571bb96bdc3234f5>
+			<hash_10010304eefec0379d305ade7195d0b8cae08b>
+				<graph_type_id>4</graph_type_id>
+				<task_item_id>hash_0801032ad0f6a599790db9beb9b3963baf63a1</task_item_id>
+				<color_id>00BD27</color_id>
+				<alpha>FF</alpha>
+				<consolidation_function_id>4</consolidation_function_id>
+				<cdef_id>hash_050103b714fdc920a1e3e7bb0f198cfbdc7ecc</cdef_id>
+				<vdef_id>0</vdef_id>
+				<shift></shift>
+				<value></value>
+				<gprint_id>hash_060103e9c43831e54eca8069317a2ce8c6f751</gprint_id>
+				<textalign></textalign>
+				<text_format>Trip Point 0</text_format>
+				<hard_return></hard_return>
+				<line_width>1.00</line_width>
+				<dashes></dashes>
+				<dash_offset>0</dash_offset>
+				<sequence>5</sequence>
+			</hash_10010304eefec0379d305ade7195d0b8cae08b>
+			<hash_100103660ab1f17a8a879c3429600dc617ab88>
+				<graph_type_id>9</graph_type_id>
+				<task_item_id>hash_0801032ad0f6a599790db9beb9b3963baf63a1</task_item_id>
+				<color_id>0</color_id>
+				<alpha>FF</alpha>
+				<consolidation_function_id>4</consolidation_function_id>
+				<cdef_id>hash_050103b714fdc920a1e3e7bb0f198cfbdc7ecc</cdef_id>
+				<vdef_id>0</vdef_id>
+				<shift></shift>
+				<value></value>
+				<gprint_id>hash_060103e9c43831e54eca8069317a2ce8c6f751</gprint_id>
+				<textalign></textalign>
+				<text_format>Current:</text_format>
+				<hard_return>on</hard_return>
+				<line_width>1.00</line_width>
+				<dashes></dashes>
+				<dash_offset>0</dash_offset>
+				<sequence>6</sequence>
+			</hash_100103660ab1f17a8a879c3429600dc617ab88>
+			<hash_100103bd92456ba6173046624d294d2221df7c>
+				<graph_type_id>4</graph_type_id>
+				<task_item_id>hash_0801037a589c534990e2be678a348634cf0228</task_item_id>
+				<color_id>D4A017</color_id>
+				<alpha>FF</alpha>
+				<consolidation_function_id>4</consolidation_function_id>
+				<cdef_id>hash_050103b714fdc920a1e3e7bb0f198cfbdc7ecc</cdef_id>
+				<vdef_id>0</vdef_id>
+				<shift></shift>
+				<value></value>
+				<gprint_id>hash_060103e9c43831e54eca8069317a2ce8c6f751</gprint_id>
+				<textalign></textalign>
+				<text_format>Trip Point 1</text_format>
+				<hard_return></hard_return>
+				<line_width>1.00</line_width>
+				<dashes></dashes>
+				<dash_offset>0</dash_offset>
+				<sequence>7</sequence>
+			</hash_100103bd92456ba6173046624d294d2221df7c>
+			<hash_100103f96c601111717136633595e9639c9750>
+				<graph_type_id>9</graph_type_id>
+				<task_item_id>hash_0801037a589c534990e2be678a348634cf0228</task_item_id>
+				<color_id>0</color_id>
+				<alpha>FF</alpha>
+				<consolidation_function_id>4</consolidation_function_id>
+				<cdef_id>hash_050103b714fdc920a1e3e7bb0f198cfbdc7ecc</cdef_id>
+				<vdef_id>0</vdef_id>
+				<shift></shift>
+				<value></value>
+				<gprint_id>hash_060103e9c43831e54eca8069317a2ce8c6f751</gprint_id>
+				<textalign></textalign>
+				<text_format>Current:</text_format>
+				<hard_return>on</hard_return>
+				<line_width>1.00</line_width>
+				<dashes></dashes>
+				<dash_offset>0</dash_offset>
+				<sequence>8</sequence>
+			</hash_100103f96c601111717136633595e9639c9750>
+			<hash_1001038d16697d0f531c2cdb16d944ef30ee80>
+				<graph_type_id>4</graph_type_id>
+				<task_item_id>hash_080103521eed737041a261688b9aa0265e5527</task_item_id>
+				<color_id>FF0000</color_id>
+				<alpha>FF</alpha>
+				<consolidation_function_id>4</consolidation_function_id>
+				<cdef_id>hash_050103b714fdc920a1e3e7bb0f198cfbdc7ecc</cdef_id>
+				<vdef_id>0</vdef_id>
+				<shift></shift>
+				<value></value>
+				<gprint_id>hash_060103e9c43831e54eca8069317a2ce8c6f751</gprint_id>
+				<textalign></textalign>
+				<text_format>Trip Point 2</text_format>
+				<hard_return></hard_return>
+				<line_width>1.00</line_width>
+				<dashes></dashes>
+				<dash_offset>0</dash_offset>
+				<sequence>9</sequence>
+			</hash_1001038d16697d0f531c2cdb16d944ef30ee80>
+			<hash_100103bfa236c524e29bbe1aa65fde417ee13f>
+				<graph_type_id>9</graph_type_id>
+				<task_item_id>hash_080103521eed737041a261688b9aa0265e5527</task_item_id>
+				<color_id>0</color_id>
+				<alpha>FF</alpha>
+				<consolidation_function_id>4</consolidation_function_id>
+				<cdef_id>hash_050103b714fdc920a1e3e7bb0f198cfbdc7ecc</cdef_id>
+				<vdef_id>0</vdef_id>
+				<shift></shift>
+				<value></value>
+				<gprint_id>hash_060103e9c43831e54eca8069317a2ce8c6f751</gprint_id>
+				<textalign></textalign>
+				<text_format>Current: </text_format>
+				<hard_return>on</hard_return>
+				<line_width>1.00</line_width>
+				<dashes></dashes>
+				<dash_offset>0</dash_offset>
+				<sequence>10</sequence>
+			</hash_100103bfa236c524e29bbe1aa65fde417ee13f>
 		</items>
 		<inputs>
 			<hash_090103843c13b6101a23194727406f1bd2ee09>
@@ -299,6 +428,24 @@
 				<column_name>task_item_id</column_name>
 				<items>hash_000103260979b53d2294c8571bb96bdc3234f5|hash_00010365380d1bcca4a2b102f05f2b0b6511c3|hash_000103a5fddb9df5f39427d193b14405864233|hash_000103adec290cca5c818c7c0857706c21ecc0</items>
 			</hash_090103843c13b6101a23194727406f1bd2ee09>
+			<hash_0901038c1019e082e67ce68f9f120bfa36031c>
+				<name>Data Source [tpuTP0]</name>
+				<description></description>
+				<column_name>task_item_id</column_name>
+				<items>hash_00010304eefec0379d305ade7195d0b8cae08b|hash_000103660ab1f17a8a879c3429600dc617ab88</items>
+			</hash_0901038c1019e082e67ce68f9f120bfa36031c>
+			<hash_0901034172ffbc5710c512bc24de41144b050b>
+				<name>Data Source [tpuTP1]</name>
+				<description></description>
+				<column_name>task_item_id</column_name>
+				<items>hash_000103bd92456ba6173046624d294d2221df7c|hash_000103f96c601111717136633595e9639c9750</items>
+			</hash_0901034172ffbc5710c512bc24de41144b050b>
+			<hash_090103736c6b4be6496015db37670635a31e13>
+				<name>Data Source [tpuTP2]</name>
+				<description></description>
+				<column_name>task_item_id</column_name>
+				<items>hash_0001038d16697d0f531c2cdb16d944ef30ee80|hash_000103bfa236c524e29bbe1aa65fde417ee13f</items>
+			</hash_090103736c6b4be6496015db37670635a31e13>
 		</inputs>
 	</hash_0001037fa95b9552f1dce5352a03de6d5c7b41>
 	<hash_0101039f3a2bafb31a11d250e17e3045b837f4>
@@ -329,6 +476,48 @@
 				<t_data_input_field_id></t_data_input_field_id>
 				<data_input_field_id>0</data_input_field_id>
 			</hash_0801037b6e64c0474e07f42920ffef4af200d4>
+			<hash_0801032ad0f6a599790db9beb9b3963baf63a1>
+				<t_data_source_name></t_data_source_name>
+				<data_source_name>tpuTP0</data_source_name>
+				<t_rrd_minimum></t_rrd_minimum>
+				<rrd_minimum>0</rrd_minimum>
+				<t_rrd_maximum></t_rrd_maximum>
+				<rrd_maximum>U</rrd_maximum>
+				<t_data_source_type_id></t_data_source_type_id>
+				<data_source_type_id>1</data_source_type_id>
+				<t_rrd_heartbeat></t_rrd_heartbeat>
+				<rrd_heartbeat>600</rrd_heartbeat>
+				<t_data_input_field_id></t_data_input_field_id>
+				<data_input_field_id>0</data_input_field_id>
+			</hash_0801032ad0f6a599790db9beb9b3963baf63a1>
+			<hash_0801037a589c534990e2be678a348634cf0228>
+				<t_data_source_name></t_data_source_name>
+				<data_source_name>tpuTP1</data_source_name>
+				<t_rrd_minimum></t_rrd_minimum>
+				<rrd_minimum>0</rrd_minimum>
+				<t_rrd_maximum></t_rrd_maximum>
+				<rrd_maximum>U</rrd_maximum>
+				<t_data_source_type_id></t_data_source_type_id>
+				<data_source_type_id>1</data_source_type_id>
+				<t_rrd_heartbeat></t_rrd_heartbeat>
+				<rrd_heartbeat>600</rrd_heartbeat>
+				<t_data_input_field_id></t_data_input_field_id>
+				<data_input_field_id>0</data_input_field_id>
+			</hash_0801037a589c534990e2be678a348634cf0228>
+			<hash_080103521eed737041a261688b9aa0265e5527>
+				<t_data_source_name></t_data_source_name>
+				<data_source_name>tpuTP2</data_source_name>
+				<t_rrd_minimum></t_rrd_minimum>
+				<rrd_minimum>0</rrd_minimum>
+				<t_rrd_maximum></t_rrd_maximum>
+				<rrd_maximum>U</rrd_maximum>
+				<t_data_source_type_id></t_data_source_type_id>
+				<data_source_type_id>1</data_source_type_id>
+				<t_rrd_heartbeat></t_rrd_heartbeat>
+				<rrd_heartbeat>600</rrd_heartbeat>
+				<t_data_input_field_id></t_data_input_field_id>
+				<data_input_field_id>0</data_input_field_id>
+			</hash_080103521eed737041a261688b9aa0265e5527>
 		</items>
 		<data>
 			<item_000>
@@ -377,7 +566,7 @@
 				<value></value>
 			</item_008>
 			<item_009>
-				<data_input_field_id>hash_070103f4facc5e2ca7ebee621f09bc6d9fc792</data_input_field_id>
+				<data_input_field_id>hash_070103617cdc8a230615e59f06f361ef6e7728</data_input_field_id>
 				<t_value></t_value>
 				<value></value>
 			</item_009>
@@ -387,7 +576,7 @@
 				<value></value>
 			</item_010>
 			<item_011>
-				<data_input_field_id>hash_070103617cdc8a230615e59f06f361ef6e7728</data_input_field_id>
+				<data_input_field_id>hash_070103f4facc5e2ca7ebee621f09bc6d9fc792</data_input_field_id>
 				<t_value></t_value>
 				<value></value>
 			</item_011>

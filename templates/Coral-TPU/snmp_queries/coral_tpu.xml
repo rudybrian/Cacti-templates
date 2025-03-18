@@ -23,5 +23,26 @@
 			<direction>output</direction>
 			<oid>.1.3.6.1.4.1.8072.1.3.2.4.1.2.10.99.111.114.97.108.116.101.109.112.115</oid>
 		</tpuTemp>
+		<tpuTP0>
+			<name>Trip Point 0 Temperature</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.8072.1.3.2.4.1.2.8.99.111.114.97.108.116.112.48</oid>
+		</tpuTP0>
+		<tpuTP1>
+			<name>Trip Point 1 Temperature</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.8072.1.3.2.4.1.2.8.99.111.114.97.108.116.112.49</oid>
+		</tpuTP1>
+		<tpuTP2>
+			<name>Trip Point 2 Temperature</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.8072.1.3.2.4.1.2.8.99.111.114.97.108.116.112.50</oid>
+		</tpuTP2>
 	</fields>
 </query>
